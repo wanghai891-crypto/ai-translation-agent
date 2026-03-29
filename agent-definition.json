@@ -1,0 +1,91 @@
+{
+  "name": "AI Translation Agent",
+  "version": "1.0.0",
+  "description": "High-quality AI translation service that preserves tone and cultural nuances",
+  "author": "wanghai",
+  "capabilities": [
+    "translation",
+    "language-detection",
+    "multi-language"
+  ],
+  "endpoints": [
+    {
+      "path": "/translate",
+      "method": "POST",
+      "description": "Translate text between languages",
+      "parameters": {
+        "text": {
+          "type": "string",
+          "required": true,
+          "description": "Text to translate"
+        },
+        "target_language": {
+          "type": "string",
+          "required": true,
+          "description": "Target language (e.g., Chinese, English, Spanish)"
+        },
+        "source_language": {
+          "type": "string",
+          "required": false,
+          "default": "auto",
+          "description": "Source language (auto-detect if not specified)"
+        },
+        "preserve_tone": {
+          "type": "boolean",
+          "required": false,
+          "default": true,
+          "description": "Preserve original tone and style"
+        }
+      },
+      "response": {
+        "translated_text": {
+          "type": "string",
+          "description": "Translated text"
+        },
+        "source_language": {
+          "type": "string",
+          "description": "Detected or specified source language"
+        },
+        "target_language": {
+          "type": "string",
+          "description": "Target language"
+        },
+        "character_count": {
+          "type": "integer",
+          "description": "Number of characters in original text"
+        },
+        "cost": {
+          "type": "number",
+          "description": "Cost in USD"
+        }
+      }
+    }
+  ],
+  "pricing": {
+    "model": "usage-based",
+    "rate": 0.01,
+    "unit": "per 100 characters"
+  },
+  "supported_languages": [
+    "English",
+    "Chinese",
+    "Spanish",
+    "French",
+    "German",
+    "Japanese",
+    "Korean",
+    "Arabic",
+    "Russian",
+    "Portuguese",
+    "Italian",
+    "Dutch",
+    "Polish",
+    "Turkish",
+    "Vietnamese",
+    "Thai",
+    "Indonesian",
+    "Hindi",
+    "Swedish",
+    "Norwegian"
+  ]
+}
